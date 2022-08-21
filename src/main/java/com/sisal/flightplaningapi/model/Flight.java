@@ -2,12 +2,14 @@ package com.sisal.flightplaningapi.model;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import jakarta.persistence.*;
+
+import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import java.util.Date;
+
 
 
 @Entity

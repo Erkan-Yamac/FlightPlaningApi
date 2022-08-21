@@ -13,15 +13,7 @@ import java.util.List;
 @RestController
 public class FlightPlaningApiController {
 
-    @RequestMapping
-    public String flightPlaningApi(){
-        return "Hello World from Spring Boot";
-    }
-    @RequestMapping("/goodbye")
-    public String goodbye(){
 
-        return "bye";
-    }
 
     @Autowired
     FlightRepository flightRepo;
@@ -39,6 +31,7 @@ public class FlightPlaningApiController {
            }
        }
        catch(DailyLimitException e){
+
            throw new DailyLimitException();
            //return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
        }
