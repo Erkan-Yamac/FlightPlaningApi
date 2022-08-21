@@ -4,6 +4,7 @@ import com.sisal.flightplaningapi.exception.DailyLimitException;
 import com.sisal.flightplaningapi.model.Flight;
 import com.sisal.flightplaningapi.repository.FlightRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +13,8 @@ import java.util.List;
 
 @RestController
 public class FlightPlaningApiController {
-
+    @Value("${dailyLimit}")
+    private int dailyFlightLimit;
 
 
     @Autowired
@@ -22,7 +24,7 @@ public class FlightPlaningApiController {
     public ResponseEntity<Flight> save(@RequestBody Flight flight){
        try {
 
-           if(flightRepo.sameDayFlightCount(flight.getAirline_code(),flight.getSource_airport_code(),flight.getDestination_airport_code(), flight.getFlight_date())==3)
+           if(flightRepo.sameDayFlightCount(flight.getAirline_code(),flight.getSource_airport_code(),flight.getDestination_airport_code(), flight.getFlight_date())>=dailyFlightLimit)
            {
                throw new DailyLimitException();
            }
@@ -56,6 +58,7 @@ public class FlightPlaningApiController {
 
         }
     }
+
 
 }
 
