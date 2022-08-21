@@ -7,6 +7,10 @@ daily at most 3 flights for an airline between 2 destinations, this is only one 
 in this application we have 1 method and we can use it for get or post ."localhost:8080/Flights" 
 if we call it with get method it shows list of all flights without any filters.
 if we call it in post action with json data it will save the flight
+if we use given data we we will get an error "There must be daily at most 3 flights for an airline between 2 destinations."
+because we have initially inserted 3 flights in same day for that destinations.
+For inserting flight you need to chose an other day or other parameters.
+
 
 ## Dependencies
 
