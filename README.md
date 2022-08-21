@@ -10,7 +10,7 @@ if we call it in post action with json data it will save the flight
 if we use given data we we will get an error "There must be daily at most 3 flights for an airline between 2 destinations."
 because we have initially inserted 3 flights in same day for that destinations.
 For inserting flight you need to chose an other day or other parameters.
-
+in application.properties you can change daily limit of flights(dailyLimit=3)
 
 ## Dependencies
 
