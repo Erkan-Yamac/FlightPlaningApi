@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS TBL_FLIGHTPLAN;
+
+CREATE TABLE TBL_FLIGHTPLAN(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    airline_code VARCHAR(250) NOT NULL,
+    source_airport_code VARCHAR(250) NOT NULL,
+    destination_airport_code VARCHAR(250) NOT NULL,
+    flight_date TIMESTAMP
+);
